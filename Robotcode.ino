@@ -41,15 +41,15 @@ void loop () {
   duration = pulseIn(echo, HIGH);
   distance = duration * 0.034/2;
   if(distance > clear){
-    Forward();
+    Forward();   //this is for our sensor to check its surrondings to see if it's clear to go forwar  if it's not clear then it goes backwards and turns right 
   }
   else {
     Back();
     delay(500);
     Right();
     delay(325);
-  }
-    
+  }              //if it's not clear then it goes backwards and turns right 
+   
   // Serial.print("Distance:");
   // Serial.println(distance);
   // delay(1000);
@@ -98,3 +98,4 @@ void Stop() {
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, LOW);
   }
+  //all the voids are what we want the robot to do
