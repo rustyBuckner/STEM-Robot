@@ -8,6 +8,8 @@ int potVal = 0;
 int spin180 = 425;
 int speed1 = 100;
 int speed2 = 90;
+
+
 // define motor pins
 #define ENA 6 // PWM pin for controlling speed of motor A
 #define ENB 11 // PWM pin for controlling speed of motor B
@@ -31,6 +33,14 @@ int speed2 = 90;
 }
 
 void loop () {
+ for (pos = 0; pos <= 180; pos += 1){
+  myservo.write(pos);
+  delay(15);
+  }
+  for (pos = 180; pos >= 0; pos -= 1;) {
+    myservo.write(pos);
+    delay(15);
+  }
   
   digitalWrite(trig, LOW);
   delayMicroseconds(2);
